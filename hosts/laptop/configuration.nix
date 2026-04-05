@@ -69,6 +69,9 @@
     git
 
     waybar
+    font-awesome
+    nerdfonts
+
     alacritty
     xwayland
     swaylock
@@ -78,6 +81,6 @@
   programs.niri.enable = true;
   services.displayManager.defaultSession = "niri";
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
 }

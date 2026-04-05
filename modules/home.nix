@@ -18,6 +18,7 @@
   };
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;  
+  xdg.configFile."waybar".source = ./waybar;  
 
   programs.home-manager.enable = true;
 }
