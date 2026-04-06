@@ -67,10 +67,8 @@
     wget
     curl
     git
-
+    
     waybar
-    font-awesome
-    nerdfonts
 
     alacritty
     xwayland
@@ -80,7 +78,16 @@
   #niri
   programs.niri.enable = true;
   services.displayManager.defaultSession = "niri";
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
+  
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ]; 
 
   system.stateVersion = "26.05";
-
 }

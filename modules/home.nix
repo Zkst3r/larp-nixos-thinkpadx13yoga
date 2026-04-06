@@ -17,7 +17,7 @@
     settings.user.email = "cmpfire@yanxdex.ru";
   };
 
-  xdg.configFile."niri/config.kdl".source = ./config.kdl;  
+  xdg.configFile."niri/config.kdl".source = ./niri.kdl;  
   xdg.configFile."waybar".source = ./waybar;  
 
   programs.home-manager.enable = true;
