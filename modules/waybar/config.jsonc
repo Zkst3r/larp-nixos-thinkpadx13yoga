@@ -236,7 +236,7 @@
 
     "custom/wallpaper": {
         "format": "󰸉",
-        "on-click": "qs ipc call panelWindow toggleWallpaperSwitcher",
+        "on-click": "find /etc/nixos/wallpapers -type f | shuf -n 1 | xargs awww img --transition-type simple",
         "tooltip": false
     }
 }

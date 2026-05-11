@@ -9,8 +9,8 @@
 @define-color gruv-beige        rgba(235, 219, 178, 0.8);
 @define-color gruv-grey         rgba(168, 153, 132, 0.8);
 
-@define-color background-blue   rgba(13, 17, 23, 0.8);
-@define-color text-white        rgba(255, 255, 255, 0.9);
+@define-color background-blue   rgba(13, 17, 23, 0.95);
+@define-color text-white        rgba(255, 255, 255, 0.95);
 
 @define-color hover-black       rgba(0, 0, 0, 0.3);
 @define-color mute-black        rgba(0, 0, 0, 0.6);

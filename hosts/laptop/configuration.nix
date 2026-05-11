@@ -1,13 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib,  ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
+      ./pkgs.nix
+      ./laptop.nix
     ];
-
+  
+  # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -16,14 +19,11 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # networking.wireless.enable = true;  
 
   # Enable networking
   networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -43,10 +43,16 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
+  i18n.supportedLocales = [
+    "ru_RU.UTF-8/UTF-8"
+    "en_US.UTF-8/UTF-8"
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "us, ru";
     variant = "";
+    options = "grp:alt_shift_toggle";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -54,40 +60,42 @@
     isNormalUser = true;
     description = "kster";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    curl
-    git
-    
-    waybar
-
-    alacritty
-    xwayland
-    swaylock
-  ];
   
+  environment.shellAliases = {
+    switch-laptop = "sudo nixos-rebuild switch --flake /etc/nixos#laptop";
+  };
+  
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };  
+  
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
+
   #niri
   programs.niri.enable = true;
   services.displayManager.defaultSession = "niri";
-  
+
   xdg.portal = {
     enable = true;
-    extraPortals = [
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
-    config.common.default = "*";
+    config = {
+      niri = {
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];         
+      };
+    };
   };
   
-  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ]; 
+  
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   system.stateVersion = "26.05";
 }
