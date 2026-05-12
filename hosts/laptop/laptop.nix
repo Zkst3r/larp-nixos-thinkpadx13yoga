@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   hardware.sensor.iio.enable = true;
   services.libinput.enable = true;
+  services.upower.enable = true;  
 
   environment.systemPackages = with pkgs; [
     iio-sensor-proxy

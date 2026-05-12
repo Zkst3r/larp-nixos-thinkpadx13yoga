@@ -15,6 +15,7 @@
     #DE pkgs
     blueman
     waybar
+    noctalia-shell
     alacritty
     swaylock
     awww
@@ -30,7 +31,7 @@
     brightnessctl
     pavucontrol
     pulseaudio
-        
+    
     #apps
     dae
     daed
@@ -39,13 +40,16 @@
     discord
     webcord-vencord
     rnote
-    python3
     jetbrains.pycharm #RKN
     libreoffice
     fastfetch     
     xwayland-satellite
     qbittorrent
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
+    
+    (python3.withPackages (ps: with ps; [
+      tkinter
+    ]))
   ];
 
   programs.steam.enable = true;

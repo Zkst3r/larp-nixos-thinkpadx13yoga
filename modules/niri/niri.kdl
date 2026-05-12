@@ -295,9 +295,9 @@ spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "systemctl --user import-environment PATH WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR"
 spawn-at-startup "sh" "-c" "rot8" 
 spawn-at-startup "sh" "-c" "xwayland-satellite"
-spawn-at-startup "sh" "-c" "hypridle"
-spawn-at-startup "sh" "-c" "awww-daemon"
-spawn-at-startup "sh" "-c" "waybar"
+//spawn-at-startup "sh" "-c" "hypridle"
+//spawn-at-startup "sh" "-c" "awww-daemon"
+spawn-at-startup "sh" "-c" "noctalia-shell"
 spawn-at-startup "sh" "-c" "wl-paste --type text  --watch cliphist store"
 spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
 
@@ -394,7 +394,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: noctalia launcher" { spawn "sh" "-c" "noctalia-shell ipc call launcher toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+E { spawn "dolphin"; }
 
