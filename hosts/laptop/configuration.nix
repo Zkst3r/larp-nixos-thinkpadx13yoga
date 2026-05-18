@@ -54,10 +54,13 @@
     variant = "";
     options = "grp:alt_shift_toggle";
   };
+  
+  programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kster = {
     isNormalUser = true;
+    shell = pkgs.fish;
     description = "kster";
     extraGroups = [ "networkmanager" "wheel" ];
   };
