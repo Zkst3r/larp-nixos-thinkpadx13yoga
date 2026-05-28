@@ -76,7 +76,6 @@
   };  
   
   services.displayManager.gdm.enable = true;
-  services.displayManager.gdm.wayland = true;
 
   #niri
   programs.niri.enable = true;
