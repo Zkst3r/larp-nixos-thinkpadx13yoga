@@ -75,7 +75,13 @@
     pulse.enable = true;
   };  
   
-  services.displayManager.gdm.enable = true;
+  programs.dconf.enable = true;
+  services.xserver.enable = true;  
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-mocha-mauve";
+  };
 
   #niri
   programs.niri.enable = true;
@@ -83,10 +89,10 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ 
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
-    ];
+#    extraPortals = [ 
+#      pkgs.xdg-desktop-portal-gnome
+#      pkgs.xdg-desktop-portal-gtk
+#    ];
     config = {
       niri = {
         "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];

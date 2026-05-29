@@ -6,28 +6,22 @@
     vim
     wget
     curl
-    git
-    findutils
-    glibc
-    coreutils    
+    git    
     htop    
 
     #DE pkgs
-    blueman
-    waybar
     noctalia-shell
     alacritty
-    swaylock
-    awww
-    zenity
-    fuzzel
-    hyprlock
-    hypridle
     wl-clipboard
     cliphist
     kdePackages.dolphin
+    catppuccin-sddm    
+    papirus-icon-theme 
+    adwaita-icon-theme
+    hicolor-icon-theme    
 
     #laptop
+    blueman
     brightnessctl
     pavucontrol
     pulseaudio

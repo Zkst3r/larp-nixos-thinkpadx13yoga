@@ -7,7 +7,6 @@
 
   imports = [
     ./alacritty
-#    ./fuzzel
   ];
 
   home.packages = with pkgs; [
@@ -21,12 +20,8 @@
     settings.user.name = "kster";
     settings.user.email = "cmpfire@yanxdex.ru";
   };
- 
-  xdg.configFile."noctalia/config.json".source = ./noctalia/noctalia.json;  
+  
   xdg.configFile."niri/config.kdl".source = ./niri/niri.kdl;  
-#  xdg.configFile."waybar".source = ./waybar;  
-#  xdg.configFile."hypr/hypridle.conf".source = ./hypridle/hypridle.conf;
-#  xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock/hyprlock.conf;
 
   programs.home-manager.enable = true;
 }
