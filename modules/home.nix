@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.username = "kster";
@@ -12,6 +12,13 @@
   home.packages = with pkgs; [
     telegram-desktop
     firefox
+    obs-studio
+    discord
+    webcord-vencord
+    jetbrains.pycharm #rkn
+    libreoffice
+    qbittorrent
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
   ];
 
 

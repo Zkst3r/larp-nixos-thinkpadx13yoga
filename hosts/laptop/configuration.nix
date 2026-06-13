@@ -25,6 +25,12 @@
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
+  # polkit
+  security.polkit.enable = true;  
+
+  # flash
+  services.udisks2.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
 
@@ -55,7 +61,12 @@
     options = "grp:alt_shift_toggle";
   };
   
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      fastfetch
+    '';
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kster = {

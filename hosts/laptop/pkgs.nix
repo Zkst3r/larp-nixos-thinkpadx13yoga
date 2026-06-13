@@ -7,14 +7,28 @@
     wget
     curl
     git    
-    htop    
+    htop
+    btop
+    eza
+    lolcat    
 
     #DE pkgs
     noctalia-shell
     alacritty
     wl-clipboard
     cliphist
+
+    #dolphin
     kdePackages.dolphin
+    kdePackages.ark
+    kdePackages.kdegraphics-thumbnailers
+    kdePackages.ffmpegthumbs
+    kdePackages.kio-extras
+    p7zip
+    unrar
+    unzip
+   
+
     catppuccin-sddm    
     papirus-icon-theme 
     adwaita-icon-theme
@@ -30,16 +44,9 @@
     dae
     daed
     zed
-    obs-studio
-    discord
-    webcord-vencord
     rnote
-    jetbrains.pycharm #RKN
-    libreoffice
     fastfetch     
     xwayland-satellite
-    qbittorrent
-    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     
     (python3.withPackages (ps: with ps; [
       tkinter

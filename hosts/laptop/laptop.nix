@@ -4,7 +4,7 @@
   services.upower.enable = true;  
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = lib.mkForce true;
-  security.pam.services.sudo.fprintAuth = lib.mkForce true;
+  security.pam.services.sudo.fprintAuth = lib.mkForce true;  
 
   environment.systemPackages = with pkgs; [
     iio-sensor-proxy
@@ -39,5 +39,11 @@
      # vulkan-headers
      # vulkan-validation-layers
     ];
+  };
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
   };
 }
