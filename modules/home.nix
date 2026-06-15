@@ -10,6 +10,8 @@
   ];
 
   home.packages = with pkgs; [
+    rnote
+    neovim
     telegram-desktop
     firefox
     obs-studio
@@ -21,6 +23,9 @@
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
   ];
 
+  qt = {
+    enable = true;
+  };
 
   programs.git = {
     enable = true;
@@ -29,6 +34,6 @@
   };
   
   xdg.configFile."niri/config.kdl".source = ./niri/niri.kdl;  
-
+  xdg.configFile."dolphinrc".source = ./dolphin/dolphinrc;
   programs.home-manager.enable = true;
 }

@@ -13,7 +13,6 @@
     lolcat    
 
     #DE pkgs
-    xwayland-satellite
     noctalia-shell
     alacritty
     wl-clipboard
@@ -25,12 +24,10 @@
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ffmpegthumbs
     kdePackages.kio-extras
-    kdePackages.konsole
     p7zip
     unrar
     unzip
-    zip
-
+   
     catppuccin-sddm    
     papirus-icon-theme 
     adwaita-icon-theme
@@ -45,7 +42,10 @@
     #apps
     dae
     daed
+    zed
+    rnote
     fastfetch     
+    xwayland-satellite
     
     (python3.withPackages (ps: with ps; [
       tkinter

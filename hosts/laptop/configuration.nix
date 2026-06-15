@@ -61,6 +61,8 @@
     options = "grp:alt_shift_toggle";
   };
   
+  environment.variables.TERMINAL = "alacritty";
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
