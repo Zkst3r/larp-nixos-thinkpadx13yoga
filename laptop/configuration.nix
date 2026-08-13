@@ -75,7 +75,7 @@
     isNormalUser = true;
     shell = pkgs.fish;
     description = "kster";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
   
   environment.shellAliases = {
@@ -114,9 +114,11 @@
     };
   };
   
-  
+  #docker
+  virtualisation.docker.enable = true;
+  boot.kernelModules = [ "tun" ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  system.stateVersion = "26.05";
+  system.stateVersion = "26.11";
 }

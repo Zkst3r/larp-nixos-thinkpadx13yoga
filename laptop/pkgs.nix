@@ -46,6 +46,7 @@
     dae
     daed
     fastfetch     
+    wireguard-tools    
     
     (python3.withPackages (ps: with ps; [
       tkinter

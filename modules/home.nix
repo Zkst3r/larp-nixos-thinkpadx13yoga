@@ -10,10 +10,13 @@
   ];
 
   home.packages = with pkgs; [
+    vlc
+    kdePackages.kate
     rnote
     neovim
     telegram-desktop
     firefox
+    chromium
     obs-studio
     discord
     webcord-vencord

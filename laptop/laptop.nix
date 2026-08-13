@@ -6,6 +6,8 @@
   security.pam.services.login.fprintAuth = lib.mkForce true;
   security.pam.services.sudo.fprintAuth = lib.mkForce true;  
 
+  programs.kdeconnect.enable = true;
+
   environment.systemPackages = with pkgs; [
     iio-sensor-proxy
     rot8
