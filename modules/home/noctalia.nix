@@ -23,9 +23,9 @@
         popup_borders                   = true;
         card_borders                    = true;
         popup_shadows                   = true;
-        shadow_enabled                  = false;
-        edge_shadow_enabled             = false;
-        widget_capsule_enabled          = false;
+        shadow_enabled                  = true;
+        edge_shadow_enabled             = true;
+        widget_capsule_enabled          = true;
         time_format                     = "{:%H:%M}";
         date_format                     = "%A, %x";
         external_ip_enabled             = false;
@@ -95,7 +95,7 @@
         main = {
           position           = "bottom";
           enabled            = true;
-          thickness          = 48;
+          thickness          = 40;
           margin_edge        = 0;
           margin_ends        = 0;
           padding            = 8;
@@ -108,7 +108,7 @@
           hover_highlight    = true;
           start  = [ "launcher" "clock" "sysmon" "caffeine" "active_window" ];
           center = [ "workspaces" ];
-          end    = [ "tray" "notifications" "volume" "brightness" "keyboard_layout" "battery" "settings" ];
+          end    = [ "tray" "notifications" "volume" "brightness" "keyboard_layout" "battery" "control_center" ];
         };
       };
 
