@@ -6,5 +6,6 @@
     interactiveShellInit = ''
       fastfetch
     '';
+    functions.fish_greeting = "";
   };
 }
