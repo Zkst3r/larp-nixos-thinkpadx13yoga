@@ -7,10 +7,8 @@
     # Core utilities
     vim wget curl git htop btop eza lolcat
 
-    # Desktop shell
-    noctalia-shell
+    # Desktop tools
     wl-clipboard
-    cliphist
 
     # File manager (Dolphin + plugins)
     kdePackages.dolphin

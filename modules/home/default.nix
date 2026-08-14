@@ -6,12 +6,30 @@
   home.stateVersion  = "25.11";
 
   imports = [
+    inputs.noctalia.homeModules.default
     ./programs/kitty.nix
     ./programs/fish.nix
     ./programs/starship.nix
     ./programs/git.nix
     ./theme.nix
   ];
+
+  programs.noctalia = {
+    enable = true;
+    settings = {
+      theme = {
+        mode   = "dark";
+        source = "builtin";
+        builtin = "Catppuccin";
+      };
+      wallpaper = {
+        enabled = true;
+      };
+      clipboard = {
+        enabled = true;
+      };
+    };
+  };
 
   home.packages = with pkgs; [
     # Media
