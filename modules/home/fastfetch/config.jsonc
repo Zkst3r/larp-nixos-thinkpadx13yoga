@@ -3,11 +3,12 @@
   "logo": {
     "type": "kitty",
     "source": "~/.config/fastfetch/cat.png",
-    "width": 24,
-    "height": 12,
+    "width": 20,
+    "height": 10,
     "padding": {
       "top": 1,
-      "left": 1
+      "left": 1,
+      "right": 2
     }
   },
   "display": {
