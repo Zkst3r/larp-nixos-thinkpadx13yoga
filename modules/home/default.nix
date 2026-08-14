@@ -49,8 +49,9 @@
   ];
 
   xdg.configFile."niri/config.kdl".source        = ./niri/niri.kdl;
+  xdg.configFile."dolphinrc".source              = ./dolphin/dolphinrc;
   xdg.configFile."fastfetch/config.jsonc".source = ./fastfetch/config.jsonc;
-  xdg.configFile."dolphinrc".source       = ./dolphin/dolphinrc;
+  xdg.configFile."fastfetch/cat.png".source      = ./fastfetch/cat.png;
 
   programs.home-manager.enable = true;
 }
