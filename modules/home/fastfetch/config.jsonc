@@ -63,7 +63,8 @@
     {
       "type": "cpu",
       "key": "CPU",
-      "keyColor": "magenta"
+      "keyColor": "magenta",
+      "format": "{name}"
     },
     {
       "type": "memory",
@@ -74,7 +75,8 @@
       "type": "gpu",
       "key": "GPU",
       "keyColor": "magenta",
-      "temp": false
+      "temp": false,
+      "format": "{name}"
     },
     "break",
     {
