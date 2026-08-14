@@ -13,11 +13,16 @@
   home.packages = with pkgs; [
     # Media
     vlc
+    mpv
+    ffmpeg
     obs-studio
 
     # Productivity
     kdePackages.kate
+    kdePackages.okular
     rnote
+    xournalpp
+    obsidian
     libreoffice
 
     # Development
