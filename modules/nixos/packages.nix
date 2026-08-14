@@ -8,9 +8,7 @@
     vim wget curl git htop btop eza lolcat
 
     # Desktop shell
-    xwayland-satellite
     noctalia-shell
-    alacritty
     wl-clipboard
     cliphist
 
@@ -35,13 +33,10 @@
     pavucontrol
     pulseaudio
 
-    # Applications
+    # Network & VPN
     dae
     daed
-    fastfetch
     wireguard-tools
-
-    (python3.withPackages (ps: with ps; [ tkinter ]))
   ];
 
   programs.steam.enable = true;

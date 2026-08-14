@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-  home.username    = "kster";
+  home.username      = "kster";
   home.homeDirectory = "/home/kster";
   home.stateVersion  = "25.11";
 
@@ -11,26 +11,39 @@
   ];
 
   home.packages = with pkgs; [
+    # Media
     vlc
+    obs-studio
+
+    # Productivity
     kdePackages.kate
     rnote
+    libreoffice
+
+    # Development
     neovim
-    telegram-desktop
+    jetbrains.pycharm
+    (python3.withPackages (ps: with ps; [ tkinter ]))
+
+    # Browsers
     firefox
     chromium
-    obs-studio
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+
+    # Communication
+    telegram-desktop
     discord
     webcord-vencord
-    jetbrains.pycharm
-    libreoffice
+
+    # Other
     qbittorrent
-    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+    fastfetch
   ];
 
   qt.enable = true;
 
-  xdg.configFile."niri/config.kdl".source  = ./niri/niri.kdl;
-  xdg.configFile."dolphinrc".source        = ./dolphin/dolphinrc;
+  xdg.configFile."niri/config.kdl".source = ./niri/niri.kdl;
+  xdg.configFile."dolphinrc".source       = ./dolphin/dolphinrc;
 
   programs.home-manager.enable = true;
 }
