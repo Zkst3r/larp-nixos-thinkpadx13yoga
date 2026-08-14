@@ -172,16 +172,13 @@ layout {
 
     // You can change how the focus ring looks.
     focus-ring {
-        // off — используем border вместо focus-ring
-        off
+        width 2
+        active-color "#cba6f7ff"
+        inactive-color "#313244ff"
     }
 
-    // You can also add a border. It's similar to the focus ring, but always visible.
     border {
-        width 2
-        active-color "#ffffffff"
-        inactive-color "#00000000"
-        urgent-color "#f38ba8"
+        off
     }
 
     // You can enable drop shadows for windows.
