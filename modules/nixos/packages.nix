@@ -1,56 +1,47 @@
-{ pkgs, inputs,  ... }: {
-  nixpkgs.config.allowUnfree = true;
-  
-  environment.systemPackages = with pkgs; [
-    #system
-    vim
-    wget
-    curl
-    git    
-    htop
-    btop
-    eza
-    lolcat    
+{ pkgs, ... }:
 
-    #DE pkgs
+{
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    # Core utilities
+    vim wget curl git htop btop eza lolcat
+
+    # Desktop shell
     xwayland-satellite
     noctalia-shell
     alacritty
     wl-clipboard
     cliphist
 
-    #dolphin
+    # File manager (Dolphin + plugins)
     kdePackages.dolphin
     kdePackages.ark
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ffmpegthumbs
     kdePackages.kio-extras
     kdePackages.konsole
-    p7zip
-    unrar
-    unzip
-    zip
+    p7zip unrar unzip zip
 
-    catppuccin-sddm    
-    papirus-icon-theme 
+    # Themes & icons
+    catppuccin-sddm
+    papirus-icon-theme
     adwaita-icon-theme
-    hicolor-icon-theme    
+    hicolor-icon-theme
 
-    #laptop
+    # Connectivity & audio control
     blueman
     brightnessctl
     pavucontrol
     pulseaudio
-    
-    #apps
+
+    # Applications
     dae
     daed
-    fastfetch     
-    wireguard-tools    
-    
-    (python3.withPackages (ps: with ps; [
-      tkinter
-    ]))
+    fastfetch
+    wireguard-tools
+
+    (python3.withPackages (ps: with ps; [ tkinter ]))
   ];
 
   programs.steam.enable = true;
