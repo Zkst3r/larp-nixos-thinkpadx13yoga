@@ -19,6 +19,11 @@
   services.thermald.enable              = true;
   powerManagement.powertop.enable       = true;
 
+  # USB autosuspend через udev
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
+  '';
+
   # Intel GPU
   services.xserver.videoDrivers = [ "modesetting" ];
   hardware.graphics = {
@@ -36,7 +41,13 @@
     ];
   };
 
-  # Compressed swap
+  # Явно указать VA-API драйвер (iHD — актуальный для 8го поколения и новее)
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+    VDPAU_DRIVER      = "va_gl";
+  };
+
+  # Compressed swap (физический swap не нужен при наличии zram)
   zramSwap = {
     enable        = true;
     algorithm     = "zstd";

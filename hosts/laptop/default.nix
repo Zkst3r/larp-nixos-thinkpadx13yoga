@@ -9,6 +9,7 @@
     ../../modules/nixos/hardware.nix
     ../../modules/nixos/packages.nix
     ../../modules/nixos/users.nix
+    ../../modules/nixos/performance.nix
   ];
 
   # Nix flakes
@@ -37,6 +38,9 @@
   # Wayland / environment
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables.TERMINAL = "alacritty";
+
+  # Отключить физический swap — zram достаточно
+  swapDevices = [];
 
   system.stateVersion = "26.11";
 }
