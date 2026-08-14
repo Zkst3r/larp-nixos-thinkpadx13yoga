@@ -3,14 +3,14 @@
 {
   # Единый курсор для Wayland и XWayland
   home.pointerCursor = {
-    name    = "catppuccin-mocha-mauve-cursors";
-    package = pkgs.catppuccin-cursors.mochaMauve;
-    size    = 24;
+    name       = "catppuccin-mocha-mauve-cursors";
+    package    = pkgs.catppuccin-cursors.mochaMauve;
+    size       = 24;
     gtk.enable = true;
     x11.enable = true;
   };
 
-  # GTK тема
+  # GTK тема (2/3 и 4 явно)
   gtk = {
     enable = true;
     theme = {
@@ -29,13 +29,16 @@
       package = pkgs.catppuccin-cursors.mochaMauve;
       size    = 24;
     };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
   };
 
   # Qt следует за GTK
   qt = {
-    enable         = true;
+    enable             = true;
     platformTheme.name = "gtk";
-    style.name     = "adwaita-dark";
+    style.name         = "adwaita-dark";
   };
 
   # Переменные для курсора — фикс разного размера в Wayland/XWayland
