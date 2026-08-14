@@ -68,6 +68,16 @@ input {
         // middle-emulation
     }
 
+    tablet {
+        // Map stylus to the built-in display so coordinates rotate with the screen
+        map-to-output "eDP-1"
+    }
+
+    touch {
+        // Map touchscreen to the built-in display so coordinates rotate with the screen
+        map-to-output "eDP-1"
+    }
+
     // Uncomment this to make the mouse warp to the center of newly focused windows.
     // warp-mouse-to-focus
 
