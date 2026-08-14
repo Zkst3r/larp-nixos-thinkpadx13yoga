@@ -92,7 +92,7 @@
         main = {
           position           = "bottom";
           enabled            = true;
-          thickness          = 36;
+          thickness          = 48;
           margin_edge        = 0;
           margin_ends        = 0;
           padding            = 8;
@@ -100,10 +100,11 @@
           background_opacity = 0.88;
           shadow             = false;
           border_width       = 0;
+          border_radius      = 48;
           hover_highlight    = true;
-          start  = [ "launcher" "clock" "sysmon" "caffeine" ];
+          start  = [ "launcher" "clock" "sysmon" "caffeine" "active_window" ];
           center = [ "workspaces" ];
-          end    = [ "tray" "notifications" "volume" "brightness" "keyboard_layout" "battery" "settings" ];
+          end    = [ "tray" "notifications" "volume" "keyboard_layout" "battery" "settings" ];
         };
       };
 
