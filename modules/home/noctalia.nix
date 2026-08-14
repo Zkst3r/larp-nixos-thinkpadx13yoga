@@ -23,6 +23,9 @@
         popup_borders                   = true;
         card_borders                    = true;
         popup_shadows                   = true;
+        shadow_enabled                  = false;
+        edge_shadow_enabled             = false;
+        widget_capsule_enabled          = false;
         time_format                     = "{:%H:%M}";
         date_format                     = "%A, %x";
         external_ip_enabled             = false;
@@ -100,11 +103,12 @@
           background_opacity = 0.88;
           shadow             = false;
           border_width       = 0;
-          border_radius      = 48;
+          border_radius      = 40;
+          concave_edge_corners = false;
           hover_highlight    = true;
           start  = [ "launcher" "clock" "sysmon" "caffeine" "active_window" ];
           center = [ "workspaces" ];
-          end    = [ "tray" "notifications" "volume" "keyboard_layout" "battery" "settings" ];
+          end    = [ "tray" "notifications" "volume" "brightness" "keyboard_layout" "battery" "settings" ];
         };
       };
 
