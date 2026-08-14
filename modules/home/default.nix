@@ -7,7 +7,9 @@
 
   imports = [
     ./programs/alacritty.nix
+    ./programs/starship.nix
     ./programs/git.nix
+    ./theme.nix
   ];
 
   home.packages = with pkgs; [
@@ -44,8 +46,6 @@
     qbittorrent
     fastfetch
   ];
-
-  qt.enable = true;
 
   xdg.configFile."niri/config.kdl".source = ./niri/niri.kdl;
   xdg.configFile."dolphinrc".source       = ./dolphin/dolphinrc;
