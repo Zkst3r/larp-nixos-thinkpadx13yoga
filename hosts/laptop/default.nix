@@ -37,7 +37,7 @@
 
   # Wayland / environment
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.variables.TERMINAL = "alacritty";
+  environment.variables.TERMINAL = "kitty";
 
   # Отключить физический swap — zram достаточно
   swapDevices = [];

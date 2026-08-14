@@ -6,7 +6,7 @@
   home.stateVersion  = "25.11";
 
   imports = [
-    ./programs/alacritty.nix
+    ./programs/kitty.nix
     ./programs/fish.nix
     ./programs/starship.nix
     ./programs/git.nix
@@ -48,7 +48,8 @@
     fastfetch
   ];
 
-  xdg.configFile."niri/config.kdl".source = ./niri/niri.kdl;
+  xdg.configFile."niri/config.kdl".source        = ./niri/niri.kdl;
+  xdg.configFile."fastfetch/config.jsonc".source = ./fastfetch/config.jsonc;
   xdg.configFile."dolphinrc".source       = ./dolphin/dolphinrc;
 
   programs.home-manager.enable = true;
