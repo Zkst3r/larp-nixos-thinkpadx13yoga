@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Единый курсор для Wayland и XWayland
   home.pointerCursor = {
+    enable     = true;
     name       = "catppuccin-mocha-mauve-cursors";
     package    = pkgs.catppuccin-cursors.mochaMauve;
     size       = 24;
@@ -10,7 +11,7 @@
     x11.enable = true;
   };
 
-  # GTK тема (2/3 и 4 явно)
+  # GTK тема
   gtk = {
     enable = true;
     theme = {
@@ -29,6 +30,8 @@
       package = pkgs.catppuccin-cursors.mochaMauve;
       size    = 24;
     };
+    # Явно задаём GTK4 тему чтобы не было предупреждения о смене дефолта
+    gtk4.theme = config.gtk.theme;
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
@@ -37,7 +40,7 @@
   # Qt следует за GTK
   qt = {
     enable             = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
     style.name         = "adwaita-dark";
   };
 
