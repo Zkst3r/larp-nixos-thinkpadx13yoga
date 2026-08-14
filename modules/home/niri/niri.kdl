@@ -9,7 +9,6 @@
 // https://yalter.github.io/niri/Configuration:-Input
 
 environment {
-    XDG_CURRENT_DESKTOP "GNOME"
     XDG_SESSION_TYPE "wayland"
     DISPLAY ":0"
 }
@@ -292,15 +291,12 @@ window-rule {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "dbus-update-activation-environment" "--all"
-spawn-at-startup "systemctl --user import-environment PATH WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR"
-spawn-at-startup "sh" "-c" "rot8" 
-spawn-at-startup "sh" "-c" "xwayland-satellite"
+spawn-at-startup "rot8"
 //spawn-at-startup "sh" "-c" "hypridle"
 //spawn-at-startup "sh" "-c" "awww-daemon"
-spawn-at-startup "sh" "-c" "noctalia-shell"
-spawn-at-startup "sh" "-c" "wl-paste --type text  --watch cliphist store"
-spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
