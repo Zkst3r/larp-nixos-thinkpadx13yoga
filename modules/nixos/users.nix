@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = "fastfetch";
-  };
+  programs.fish.enable = true;
 
   users.users.kster = {
     isNormalUser = true;

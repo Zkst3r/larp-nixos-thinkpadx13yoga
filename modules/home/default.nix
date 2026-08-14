@@ -7,6 +7,7 @@
 
   imports = [
     ./programs/alacritty.nix
+    ./programs/fish.nix
     ./programs/starship.nix
     ./programs/git.nix
     ./theme.nix

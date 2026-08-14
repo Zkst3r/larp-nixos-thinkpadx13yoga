@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  # Единый курсор для Wayland и XWayland
+  # Чёрный курсор Bibata
   home.pointerCursor = {
     enable     = true;
-    name       = "catppuccin-mocha-mauve-cursors";
-    package    = pkgs.catppuccin-cursors.mochaMauve;
+    name       = "Bibata-Modern-Classic";
+    package    = pkgs.bibata-cursors;
     size       = 24;
     gtk.enable = true;
     x11.enable = true;
@@ -26,11 +26,10 @@
       package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
-      name    = "catppuccin-mocha-mauve-cursors";
-      package = pkgs.catppuccin-cursors.mochaMauve;
+      name    = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
       size    = 24;
     };
-    # Явно задаём GTK4 тему чтобы не было предупреждения о смене дефолта
     gtk4.theme = config.gtk.theme;
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
@@ -44,9 +43,9 @@
     style.name         = "adwaita-dark";
   };
 
-  # Переменные для курсора — фикс разного размера в Wayland/XWayland
+  # Переменные для курсора
   home.sessionVariables = {
-    XCURSOR_THEME = "catppuccin-mocha-mauve-cursors";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE  = "24";
   };
 }
