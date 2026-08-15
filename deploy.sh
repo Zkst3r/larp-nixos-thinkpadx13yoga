@@ -18,28 +18,12 @@ echo "👤 Пользователь: $REAL_USER"
 echo "🏠 Home: $REAL_HOME"
 echo ""
 
-# Настройка git credentials
-echo "🔑 Настройка git credentials..."
-read -p "Введи GitHub username (Zkst3r): " GITHUB_USER
-GITHUB_USER=${GITHUB_USER:-Zkst3r}
-
-read -sp "Введи GitHub token (или нажми Enter для SSH): " GITHUB_TOKEN
-echo ""
-
 # Клонирование репозитория
 TEMP_DIR="/tmp/nixos-config-deploy"
 rm -rf "$TEMP_DIR"
 
-echo ""
-echo "📥 Клонирование конфигурации..."
-
-if [ -z "$GITHUB_TOKEN" ]; then
-    echo "Используем SSH..."
-    sudo -u "$REAL_USER" git clone git@github.com:Zkst3r/larp-nixos-thinkpadx13yoga.git "$TEMP_DIR"
-else
-    echo "Используем HTTPS с токеном..."
-    sudo -u "$REAL_USER" git clone "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/Zkst3r/larp-nixos-thinkpadx13yoga.git" "$TEMP_DIR"
-fi
+echo "📥 Клонирование конфигурации из GitHub..."
+sudo -u "$REAL_USER" git clone https://github.com/Zkst3r/larp-nixos-thinkpadx13yoga.git "$TEMP_DIR"
 
 # Бэкап текущего hardware-configuration.nix
 echo ""
