@@ -10,6 +10,8 @@
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = lib.mkForce true;
   security.pam.services.sudo.fprintAuth  = lib.mkForce true;
+  # Отключаем fingerprint для SDDM — только пароль
+  security.pam.services.sddm.fprintAuth = lib.mkForce false;
 
   # KDE Connect (phone integration)
   programs.kdeconnect.enable = true;
