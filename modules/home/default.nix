@@ -32,7 +32,8 @@
 
     # Development
     neovim
-    jetbrains.pycharm
+    gh
+    #jetbrains.pycharm
     (python3.withPackages (ps: with ps; [ tkinter ]))
 
     # Browsers
@@ -41,9 +42,9 @@
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Communication
-    telegram-desktop
-    discord
-    webcord-vencord
+    #telegram-desktop
+    #discord
+    #webcord-vencord
 
     # Other
     qbittorrent
