@@ -2,7 +2,7 @@
 TerminalApplication=alacritty
 Version=202
 ViewPropsTimestamp=2026,4,26,18,57,28.553
-ColorScheme=BreezeLight
+ColorScheme=BreezeDark
 ShowSpaceInfo=True
 
 [KFileDialog Settings]
@@ -13,4 +13,4 @@ Places Icons Static Size=22
 MenuBar=Disabled
 
 [UiSettings]
-ColorScheme=BreezeLight
+ColorScheme=BreezeDark

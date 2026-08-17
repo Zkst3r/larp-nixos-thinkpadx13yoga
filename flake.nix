@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
       # НЕ указываем inputs.nixpkgs.follows — иначе сломается binary cache
@@ -41,6 +46,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.kster = import ./modules/home;
+          home-manager.sharedModules = [ inputs.nixvim.homeManagerModules.nixvim ];
         }
       ];
     };

@@ -11,6 +11,7 @@
     ./programs/fish.nix
     ./programs/starship.nix
     ./programs/git.nix
+    ./programs/neovim.nix
     ./theme.nix
     ./noctalia.nix
   ];
@@ -31,7 +32,6 @@
     libreoffice
 
     # Development
-    neovim
     gh
     jetbrains.pycharm
     (python3.withPackages (ps: with ps; [ tkinter ]))
