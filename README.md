@@ -9,14 +9,13 @@
 Если у тебя уже установлен NixOS через графический установщик:
 
 ```bash
-# Скачай и запусти скрипт деплоя
-curl -o deploy.sh https://raw.githubusercontent.com/Zkst3r/larp-nixos-thinkpadx13yoga/main/deploy.sh
-chmod +x deploy.sh
-sudo ./deploy.sh
+# Клонируй репо и запусти скрипт деплоя
+git clone --depth=1 https://github.com/Zkst3r/larp-nixos-thinkpadx13yoga.git /tmp/nixos-deploy
+cd /tmp/nixos-deploy
+sudo bash deploy.sh
 ```
 
 Скрипт:
-- Клонирует репозиторий
 - Сохранит твой `hardware-configuration.nix`
 - Забэкапит старый конфиг в `/root/nixos-backup-*`
 - Скопирует конфиг в `/etc/nixos`
