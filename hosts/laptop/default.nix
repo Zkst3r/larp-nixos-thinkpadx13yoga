@@ -26,8 +26,7 @@
       useOSProber = true;
       efiInstallAsRemovable = false;
       configurationLimit = 10;  # Сколько старых поколений показывать
-      extraEntriesBeforeNixOS = false;  # Наши записи будут после NixOS
-      extraEntries = ''
+      extraConfig = ''
         menuentry 'UEFI Firmware Settings' --id 'uefi-firmware' {
           fwsetup
         }
