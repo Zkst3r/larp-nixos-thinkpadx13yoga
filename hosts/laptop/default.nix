@@ -25,8 +25,8 @@
       efiSupport = true;
       useOSProber = true;
       efiInstallAsRemovable = false;
-      configurationLimit = 10;  # Сколько старых поколений показывать
-      extraConfig = ''
+      configurationLimit = 10;  # Показываем 10 старых поколений
+      extraEntries = ''
         menuentry 'UEFI Firmware Settings' --id 'uefi-firmware' {
           fwsetup
         }
