@@ -238,7 +238,7 @@
       bash-language-server
 
       # Форматтеры
-      nixfmt-rfc-style
+      nixfmt           # Nix formatter
       black            # Python
       stylua           # Lua
 

@@ -46,7 +46,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.kster = import ./modules/home;
-          home-manager.sharedModules = [ inputs.nixvim.homeManagerModules.nixvim ];
+          home-manager.sharedModules = [ inputs.nixvim.homeModules.nixvim ];
         }
       ];
     };
