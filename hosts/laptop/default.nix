@@ -24,6 +24,13 @@
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
+      efiInstallAsRemovable = false;
+      configurationLimit = 10;  # Сколько старых поколений показывать
+      extraEntries = ''
+        menuentry 'UEFI Firmware Settings' --id 'uefi-firmware' {
+          fwsetup
+        }
+      '';
       minegrub-world-sel = {
         enable = true;
         customIcons = [
@@ -31,7 +38,7 @@
             name = "nixos";
             lineTop = "NixOS Unstable";
             lineBottom = "Niri + Noctalia";
-            imgName = "nixos";  # Используем встроенную иконку темы
+            imgName = "nixos";
           }
         ];
       };
