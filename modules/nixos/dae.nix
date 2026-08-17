@@ -19,13 +19,13 @@
       Type = "oneshot";
       RemainAfterExit = true;
 
-      # Скачиваем файлы с проверкой
+      # Скачиваем стандартные geo файлы от v2ray
       ExecStart = pkgs.writeShellScript "download-geodata" ''
         set -euo pipefail
 
-        echo "Downloading geoip.dat..."
+        echo "Downloading geoip.dat from v2ray..."
         ${pkgs.curl}/bin/curl -fsSL -o /etc/dae-wing/geoip.dat \
-          https://cdn.jsdelivr.net/gh/runetfreedom/russia-blocked-geoip@release/geoip.dat
+          https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
 
         # Проверяем что файл скачался и не пустой
         if [ ! -s /etc/dae-wing/geoip.dat ]; then
@@ -33,9 +33,9 @@
           exit 1
         fi
 
-        echo "Downloading geosite.dat..."
+        echo "Downloading geosite.dat from v2ray..."
         ${pkgs.curl}/bin/curl -fsSL -o /etc/dae-wing/geosite.dat \
-          https://cdn.jsdelivr.net/gh/runetfreedom/russia-blocked-geosite@release/geosite.dat
+          https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat
 
         # Проверяем что файл скачался и не пустой
         if [ ! -s /etc/dae-wing/geosite.dat ]; then
