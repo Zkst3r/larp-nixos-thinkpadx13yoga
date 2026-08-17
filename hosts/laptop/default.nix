@@ -24,7 +24,7 @@
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
-      minegrub-world-sel-theme = {
+      minegrub-world-sel = {
         enable = true;
         customIcons = [
           {
