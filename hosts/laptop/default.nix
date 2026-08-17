@@ -1,4 +1,4 @@
-{ pkgs, hostname, ... }:
+{ pkgs, hostname, inputs, ... }:
 
 {
   imports = [
@@ -11,14 +11,33 @@
     ../../modules/nixos/users.nix
     ../../modules/nixos/performance.nix
     ../../modules/nixos/dae.nix
+    inputs.minegrub-theme.nixosModules.default
   ];
 
   # Nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader с minegrub темой
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+      minegrub-world-sel-theme = {
+        enable = true;
+        customIcons = [
+          {
+            name = "nixos";
+            lineTop = "NixOS Unstable";
+            lineBottom = "Niri + Noctalia";
+            imgName = "nixos";  # Используем встроенную иконку темы
+          }
+        ];
+      };
+    };
+    efi.canTouchEfiVariables = true;
+  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "tun" ];
 
@@ -32,6 +51,9 @@
 
   # Removable media
   services.udisks2.enable = true;
+
+  # Flatpak
+  services.flatpak.enable = true;
 
   # Virtualisation
   virtualisation.docker.enable = true;

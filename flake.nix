@@ -28,6 +28,11 @@
       url = "github:noctalia-dev/noctalia/cachix";
       # НЕ указываем inputs.nixpkgs.follows — иначе сломается binary cache
     };
+
+    minegrub-theme = {
+      url = "github:Lxtharia/minegrub-world-sel-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, noctalia, ... }@inputs: {
