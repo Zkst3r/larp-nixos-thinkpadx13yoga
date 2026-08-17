@@ -47,7 +47,7 @@
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "tun" ];
-  boot.supportedFilesystems = [ "zfs" "btrfs" "xfs" "ntfs" ];  # Поддержка разных FS включая zstd compression
+  boot.supportedFilesystems = [ "btrfs" "xfs" "ntfs" ];  # Без ZFS, он требует hostId
 
   # Network
   networking.hostName = hostname;
