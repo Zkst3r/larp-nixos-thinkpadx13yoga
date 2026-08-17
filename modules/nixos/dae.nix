@@ -6,11 +6,11 @@
     description = "Update dae geodata files with Russia-blocked lists";
     serviceConfig = {
       Type = "oneshot";
-      ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p /etc/dae";
+      ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p /etc/dae-wing";
       # Скачиваем geoip с российскими блокировками
-      ExecStart = "${pkgs.curl}/bin/curl -L -o /etc/dae/geoip.dat https://cdn.jsdelivr.net/gh/runetfreedom/russia-blocked-geoip@release/geoip.dat";
+      ExecStart = "${pkgs.curl}/bin/curl -L -o /etc/dae-wing/geoip.dat https://cdn.jsdelivr.net/gh/runetfreedom/russia-blocked-geoip@release/geoip.dat";
       # Скачиваем geosite с доменными списками
-      ExecStartPost = "${pkgs.curl}/bin/curl -L -o /etc/dae/geosite.dat https://cdn.jsdelivr.net/gh/runetfreedom/russia-blocked-geosite@release/geosite.dat";
+      ExecStartPost = "${pkgs.curl}/bin/curl -L -o /etc/dae-wing/geosite.dat https://cdn.jsdelivr.net/gh/runetfreedom/russia-blocked-geosite@release/geosite.dat";
     };
     # Запускаем при старте системы
     wantedBy = [ "multi-user.target" ];
