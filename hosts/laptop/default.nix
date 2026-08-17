@@ -10,6 +10,7 @@
     ../../modules/nixos/packages.nix
     ../../modules/nixos/users.nix
     ../../modules/nixos/performance.nix
+    ../../modules/nixos/dae.nix
   ];
 
   # Nix flakes
