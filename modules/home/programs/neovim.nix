@@ -50,8 +50,10 @@
       # Файловый браузер
       neo-tree = {
         enable = true;
-        closeIfLastWindow = true;
-        window.width = 30;
+        settings = {
+          close_if_last_window = true;
+          window.width = 30;
+        };
       };
 
       # LSP (автодополнение, go-to-definition, ошибки)
@@ -60,7 +62,7 @@
         servers = {
           nixd.enable = true;           # Nix
           pyright.enable = true;        # Python
-          lua-ls.enable = true;         # Lua
+          lua_ls.enable = true;         # Lua (исправлено: lua_ls вместо lua-ls)
           bashls.enable = true;         # Bash
         };
 
@@ -150,13 +152,17 @@
       # Красивый статусбар
       lualine = {
         enable = true;
-        settings.options.theme = "catppuccin";
+        settings = {
+          options.theme = "catppuccin";
+        };
       };
 
       # Отступы с линиями
       indent-blankline = {
         enable = true;
-        settings.scope.enabled = true;
+        settings = {
+          scope.enabled = true;
+        };
       };
 
       # Подсветка TODO, FIXME, etc
