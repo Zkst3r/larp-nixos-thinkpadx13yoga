@@ -5,7 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     # Core utilities
-    vim wget curl git htop btop eza lolcat
+    vim wget curl git htop btop eza lolcat compsize
 
     # Desktop tools
     wl-clipboard
