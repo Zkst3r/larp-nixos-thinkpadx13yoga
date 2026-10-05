@@ -10,7 +10,7 @@
     ../../modules/nixos/packages.nix
     ../../modules/nixos/users.nix
     ../../modules/nixos/performance.nix
-    ../../modules/nixos/dae.nix
+    ../../modules/nixos/v2raya.nix
     inputs.minegrub-theme.nixosModules.default
   ];
 

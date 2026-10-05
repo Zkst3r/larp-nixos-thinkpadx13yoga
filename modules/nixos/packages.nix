@@ -33,8 +33,7 @@
     pulseaudio
 
     # Network & VPN
-    dae
-    daed
+    v2raya
     wireguard-tools
   ];
 

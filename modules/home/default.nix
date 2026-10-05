@@ -34,6 +34,7 @@
     # Development
     gh
     jetbrains.pycharm
+    claude-code
     (python3.withPackages (ps: with ps; [ tkinter ]))
 
     # Browsers
